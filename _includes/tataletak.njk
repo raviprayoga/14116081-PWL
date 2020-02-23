@@ -1,0 +1,19 @@
+---
+judul: OgataKaede's 11ty
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/sugar.css">
+    <title>{{ judul }}</title>
+  </head>
+  <body>
+  {%include "navigasi.njk" %}
+  <section>
+    {{ content | safe }}
+  </section>
+  </body>
+</html>

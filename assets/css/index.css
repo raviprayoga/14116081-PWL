@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap');
+
+h1,h3,th{
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+p ,td{
+ font-family: 'Merriweather';
+}
+th,td{
+    text-align: center;
+}
+body{
+    margin: 0px;
+}
