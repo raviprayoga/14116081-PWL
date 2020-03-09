@@ -1,19 +1,90 @@
 ---
-judul: OgataKaede's 11ty
+judul: web_lanjut_14116081
 ---
 
 <!doctype html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/sugar.css">
     <title>{{ judul }}</title>
-  </head>
-  <body>
+
+  <style>
+
+    html[data-theme='dark'] {
+      background: var(--lightBg);
+      --lightBtn: #FFBD07;
+      --lightBg: #232323;
+      --lightColor: #fff;
+      color:#fff;
+    }
+    input[type=checkbox] {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+
+  .jam{
+		overflow: hidden;
+		width: 20%;
+		margin: 1% auto;
+		border: 5px solid #efefef;
+	}
+	.kotak{
+		float: left;
+		width: 33.3%;
+		height: auto;
+		background-color: #189fff;
+	}
+	.jam p {
+		color: #fff;
+		font-size: 2vw;
+		text-align: center;
+	}
+  
+  </style>
+
+</head>
+
+<body>
   {%include "navigasi.njk" %}
-  <section>
-    {{ content | safe }}
-  </section>
-  </body>
+  
+    <section>
+      {{ content | safe }}
+    </section>
+
+<div class="jam">
+    <div class="kotak">
+      <p id="jam"></p>
+    </div>
+    <div class="kotak">
+      <p id="menit"></p>
+    </div>
+    <div class="kotak">
+      <p id="detik"></p>
+    </div>
+</div>
+
+    <script>
+          window.setTimeout("waktu()", 1000);
+        
+          function waktu() {
+            var waktu = new Date();
+            var jam = waktu.getHours();
+            setTimeout("waktu()", 1000);
+            document.getElementById("jam").innerHTML = waktu.getHours();
+            document.getElementById("menit").innerHTML = waktu.getMinutes();
+            document.getElementById("detik").innerHTML = waktu.getSeconds();
+
+            if(jam >= 20 ){
+              document.documentElement.setAttribute('data-theme', 'dark')
+            }else{
+               document.documentElement.setAttribute('data-theme', 'light')
+            }
+          }
+        </script>
+       
+        
+</body>
 </html>
